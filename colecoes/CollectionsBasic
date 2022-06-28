@@ -1,0 +1,17 @@
+Collections:
+
+Set: set = conjunto, características: por padrão, mas não obrigatóriamente (vai ser sempre) não ordenado, não garante ordenação
+mas existe o SortedSet, ele é não indexado (não pode acessar o elemento por index) e o set não aceita repetição, não pode colocar 2 elementos igual dentro do set
+não gera erro, porém, ignora o elemento.
+Set: Pode ser heterogêneo e homogêneo, não aceita objetos duplicados, pode ser ordenada e não é indexada.
+
+Collection = coleção = coleção de coisas armazenadas dentro de uma estrutura. A forma como é armazenada varia dependendo do tipo de coleção que você vai armazenar.
+
+List: é mais parecido com arrays, ele é indexado (pode acessar por index, 0, 1, 2) até o tamanho de sua lista -1, e ela aceita repetição.
+aceita repetição.
+
+Map: estrutura chave/valor, a chave tem uma estrutura que não aceita repetição, e o valor aceita repetição.
+
+Queue: implementação de filas, utiliza a lógica FIFO (First In, First Out).
+
+Stack: Implementação de pilhas, utiliza a lógica LIFO (Last In, First Out).

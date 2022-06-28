@@ -23,11 +23,11 @@ public class Matriz {
             {
                System.out.printf("Informe a nota %d do aluno %d: ", n + 1, a + 1);
                notasDaTurma[a][n] = input.nextDouble();
-               total += notasDaTurma[a][n];
+               total += notasDaTurma[a][n]; // total aqui será o valor da média da turma (todos os valores somados)
             }
         }
 
-        double media = total / (quantidadeAlunos * quantidadeNotasAlunos);
+        double media = total / (quantidadeAlunos * quantidadeNotasAlunos); // aqui se faz o cálculo da média
         System.out.println("A média da turma é: " + media);
 
         for(double[] notasDoAluno: notasDaTurma)
