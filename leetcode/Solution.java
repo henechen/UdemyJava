@@ -1,9 +1,6 @@
 package leetcode;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
@@ -19,6 +16,8 @@ public class Solution {
         System.out.println(longestCommonPrefix(strs));
 
         System.out.println(validParenthesis(" "));
+
+        int[][] boxTypes = {{1, 3}, {2, 2}, {3,1}};
     }
 //    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 //    You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -149,6 +148,7 @@ public class Solution {
 //    Open brackets must be closed by the same type of brackets.
 //    Open brackets must be closed in the correct order.
 
+
     public static boolean validParenthesis(String s)
     {
         HashMap<Character, Character> map = new HashMap<>();
@@ -178,4 +178,31 @@ public class Solution {
         }
         return stack.empty();
     }
+
+// ===========================================================================================================
+
+//    You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, where boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi]:
+//
+//    numberOfBoxes i is the number of boxes of type i.
+//    numberOfUnitsPerBox i is the number of units in each box of the type i.
+//    You are also given an integer truckSize, which is the maximum number of boxes that can be put on the truck. You can choose any boxes to put on the truck as long as the number of boxes does not exceed truckSize.
+//
+//    Return the maximum total number of units that can be put on the truck.
+
+    public static int maximumUnits(int[][] boxTypes, int truckSize)
+    {
+        Arrays.sort(boxTypes, (numberOfBoxes, numberOfUnitsPerBox) -> numberOfUnitsPerBox[1] - numberOfBoxes[1]);
+        int ans = 0;
+        for (int[] numberOfUnitsPerBox: boxTypes)
+        {
+            int count = Math.min(numberOfUnitsPerBox[0], truckSize);
+            ans += count * numberOfUnitsPerBox[1];
+            truckSize -= count;
+            if (truckSize == 0) return ans;
+        }
+        return ans;
+    }
+
+// ===========================================================================================================
+
 }

@@ -21,7 +21,7 @@ public class Motor {
     {
         if(!estaLigado)
         {
-            return 0;
+            return 0; // Retorna 0 pois o carro está desligado.
         }
             else
             {
